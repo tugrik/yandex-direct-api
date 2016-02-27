@@ -1,12 +1,12 @@
 {
-  "name": "sitkoru/yandex-direct-api",
+  "name": "tugrik/yandex-direct-api",
   "description": "Client for Yandex.Direct API v5",
   "minimum-stability": "dev",
   "license": "BEERWARE",
   "authors": [
     {
-      "name": "George Drak",
-      "email": "sonicgd@gmail.com"
+      "name": "Andrey",
+      "email": "tugriky@gmail.com"
     }
   ],
   "require": {
