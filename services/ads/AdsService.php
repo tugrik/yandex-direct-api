@@ -44,13 +44,30 @@ class AdsService extends BaseService
     /**
      * @param AdsSelectionCriteria $SelectionCriteria
      *
-     * @return AdGetItem[]
+     * @param $fieldNames
+     * @param bool $textAdFieldNames
+     * @param int $limit
+     * @param int $offset
+     * @return \directapi\services\ads\models\AdGetItem[]
      */
-    public function get(AdsSelectionCriteria $SelectionCriteria)
-    {
+    public function get(AdsSelectionCriteria $SelectionCriteria,
+                        $fieldNames,
+                        $textAdFieldNames = false,
+                        $limit = 10000,
+                        $offset = 0
+    ) {
         $params = [
-            'SelectionCriteria' => $SelectionCriteria
+            'SelectionCriteria' => $SelectionCriteria,
+            'FieldNames' => $fieldNames,
+            'Page' => [
+                'Limit' => $limit,
+                'Offset' => $offset
+            ]
         ];
+
+        if($textAdFieldNames && is_array($textAdFieldNames)){
+            $params['TextAdFieldNames'] = $textAdFieldNames;
+        }
         return parent::doGet($params, 'Ads', AdGetItem::class);
     }
 
@@ -67,6 +84,7 @@ class AdsService extends BaseService
         $response = $this->call('moderate', $params);
         $result = $this->mapArray($response->ModerateResults, ActionResult::class);
         return $result;
+
     }
 
     /**

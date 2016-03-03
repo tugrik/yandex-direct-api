@@ -28,11 +28,6 @@ class BidModifierAddItem extends Model implements ICallbackValidation
 
     /**
      * @var DemographicsAdjustmentAdd[]
-     * @DirectApiAssert\ArrayOf(type="directapi\services\bidmodifiers\models\DemographicsAdjustmentAdd")
-     * @Assert\Valid()
-     * @Assert\Count(
-     *     max="10"
-     * )
      */
     public $DemographicsAdjustments;
 

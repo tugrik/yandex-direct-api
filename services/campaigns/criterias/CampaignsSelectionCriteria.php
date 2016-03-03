@@ -17,25 +17,21 @@ class CampaignsSelectionCriteria extends Model
 
     /**
      * @var \directapi\services\campaigns\enum\CampaignTypeEnum[]
-     * @DirectApiAssert\ArrayOf(type="directapi\services\campaigns\enum\CampaignTypeEnum")
      */
     public $Types;
 
     /**
      * @var \directapi\services\campaigns\enum\CampaignStateEnum[]
-     * @DirectApiAssert\ArrayOf(type="directapi\services\campaigns\enum\CampaignStateEnum")
      */
     public $States;
 
     /**
      * @var \directapi\services\campaigns\enum\CampaignStatusEnum[]
-     * @DirectApiAssert\ArrayOf(type="directapi\services\campaigns\enum\CampaignStatusEnum")
      */
     public $Statuses;
 
     /**
      * @var \directapi\services\campaigns\enum\CampaignStatusPaymentEnum[]
-     * @DirectApiAssert\ArrayOf(type="directapi\services\campaigns\enum\CampaignStatusPaymentEnum")
      */
     public $StatusesPayment;
 }

@@ -37,7 +37,6 @@ class MobileAppAdAdd extends Model
 
     /**
      * @var MobileAppAdFeatureItem[]
-     * @DirectApiAssert\ArrayOf(type="directapi\services\ads\MobileAppAdFeatureItem")
      */
     public $Features;
 

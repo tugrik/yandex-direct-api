@@ -40,7 +40,6 @@ class BidModifiersSelectionCriteria extends Model implements ICallbackValidation
 
     /**
      * @var \directapi\services\bidmodifiers\enum\BidModifierTypeEnum[]
-     * @DirectApiAssert\ArrayOf(type="directapi\services\bidmodifiers\enum\BidModifierTypeEnum")
      * @Assert\Valid()
      */
     public $Types;
@@ -48,7 +47,6 @@ class BidModifiersSelectionCriteria extends Model implements ICallbackValidation
     /**
      * @var \directapi\services\bidmodifiers\enum\BidModifierLevelEnum[]
      * @Assert\NotBlank()
-     * @DirectApiAssert\ArrayOf(type="directapi\services\bidmodifiers\enum\BidModifierLevelEnum")
      * @Assert\Valid()
      */
     public $Levels;

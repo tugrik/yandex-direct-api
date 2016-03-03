@@ -7,7 +7,9 @@ use directapi\common\criterias\IdsCriteria;
 use directapi\common\criterias\LimitOffset;
 use directapi\common\results\ActionResult;
 use directapi\services\BaseService;
-use directapi\services\keywords\criterias\KeywordsSelectionCriteria;
+//use directapi\services\keywords\criterias\KeywordsSelectionCriteria;
+//use directapi\services\keywords\criterias\KeywordsSelectionCriteria;
+//use directapi\services\keywords\criterias\KeywordsSelectionCriteria;
 use directapi\services\keywords\enum\KeywordFieldEnum;
 use directapi\services\keywords\models\KeywordAddItem;
 use directapi\services\keywords\models\KeywordGetItem;
@@ -43,7 +45,7 @@ class KeywordsService extends BaseService
      *
      * @return KeywordGetItem[]
      */
-    public function get(KeywordsSelectionCriteria $SelectionCriteria, array $FieldNames, LimitOffset $Page = null)
+    public function get(\directapi\services\keywords\cirterias\KeywordsSelectionCriteria $SelectionCriteria, array $FieldNames, LimitOffset $Page = null)
     {
         $params = [
             'SelectionCriteria' => $SelectionCriteria,

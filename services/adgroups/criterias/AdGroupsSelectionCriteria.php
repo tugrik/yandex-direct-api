@@ -2,7 +2,6 @@
 
 namespace directapi\services\adgroups\criterias;
 
-
 use directapi\components\constraints as DirectApiAssert;
 use directapi\components\interfaces\ICallbackValidation;
 use directapi\components\Model;
@@ -23,24 +22,20 @@ class AdGroupsSelectionCriteria extends Model implements ICallbackValidation
 
     /**
      * @var \directapi\services\adgroups\enum\AdGroupTypesEnum[]
-     * @DirectApiAssert\ArrayOf(type="directapi\services\adgroups\enum\AdGroupTypesEnum")
      */
     public $Types;
 
     /**
      * @var \directapi\services\ads\models\AdGroupStatusEnum[]
-     * @DirectApiAssert\ArrayOf(type="directapi\services\adgroups\enum\AdGroupStatusEnum")
      */
     public $Statuses;
 
     /**
      * @var \directapi\common\enum\StatusEnum[]
-     * @DirectApiAssert\ArrayOf(type="directapi\common\enum\StatusEnum")
      */
     public $AppIconStatuses;
 
     /**
-     * @Assert\Callback()
      * @param ExecutionContextInterface $context
      */
     public function isValid(ExecutionContextInterface $context)

@@ -189,8 +189,15 @@ abstract class BaseService
     protected function doGet(array $params, $paramName, $class)
     {
         $response = $this->call('get', $params);
-        $items = $this->mapArray($response->$paramName, $class);
-        return $items;
+        //d($response);die;
+        if(isset($response->$paramName)){
+            return $response->$paramName;
+        }
+        return [];
+//        d($response->$paramName);die;
+//        die;
+        //$items = $this->mapArray($response->$paramName, $class);
+
     }
 
     /**
@@ -200,8 +207,8 @@ abstract class BaseService
     protected function doUpdate($params)
     {
         $response = $this->call('update', $params);
-        $result = $this->mapArray($response->UpdateResults, ActionResult::class);
-        return $result;
+        //$result = $this->mapArray($response->UpdateResults, ActionResult::class);
+        return $response->UpdateResults;
     }
 
     /**

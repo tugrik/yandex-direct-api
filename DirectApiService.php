@@ -311,6 +311,9 @@ class DirectApiService
 
         $header_size = curl_getinfo($curl, CURLINFO_HEADER_SIZE);
         $header = substr($response, 0, $header_size);
+//        $info = curl_getinfo($curl);
+        //d($info);die;
+
         $body = substr($response, $header_size);
         $data = json_decode($body);
         $regex = '/Units: (\d+)\/(\d+)\/(\d+)/';

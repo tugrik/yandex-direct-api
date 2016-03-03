@@ -27,8 +27,6 @@ class BidSetAutoItem extends Model implements ICallbackValidation
 
     /**
      * @var \directapi\services\bids\enum\ScopeEnum[]
-     * @Assert\NotBlank()
-     * @DirectApiAssert\ArrayOf(type="directapi\services\bids\enum\ScopeEnum")
      */
     public $Scope;
 
