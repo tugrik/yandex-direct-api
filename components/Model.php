@@ -10,7 +10,7 @@ class Model
     {
         if (!empty($config)) {
             foreach ($config as $name => $value) {
-                if (property_exists(get_called_class(), $name)) {
+                if (property_exists($this, $name)) {
                     $this->$name = $value;
                 } else {
                     throw new UnknownPropertyException('Свойство ' . $name . ' не существует в классе ' . static::class);
