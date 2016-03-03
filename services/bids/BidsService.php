@@ -26,7 +26,7 @@ class BidsService extends BaseService
             'SelectionCriteria' => $SelectionCriteria,
             'FieldNames'        => $FieldNames
         ];
-        return $this->doGet($params, 'Bids', BidGetItem::class);
+        return $this->doGet($params, 'Bids', false);
     }
 
     /**

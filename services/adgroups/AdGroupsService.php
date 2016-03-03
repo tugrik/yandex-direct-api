@@ -63,7 +63,8 @@ class AdGroupsService extends BaseService
         if ($Page) {
             $params['Page'] = $Page;
         }
-        return parent::doGet($params, 'AdGroups', AdGroupGetItem::class);
+
+        return parent::doGet($params, 'AdGroups', null);
     }
 
     /**

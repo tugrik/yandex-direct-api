@@ -55,7 +55,7 @@ class KeywordsService extends BaseService
             $params['Page'] = $Page;
         }
 
-        return parent::doGet($params, 'Keywords', KeywordGetItem::class);
+        return parent::doGet($params, 'Keywords', false);
     }
 
     /**

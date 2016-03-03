@@ -68,7 +68,7 @@ class AdsService extends BaseService
         if($textAdFieldNames && is_array($textAdFieldNames)){
             $params['TextAdFieldNames'] = $textAdFieldNames;
         }
-        return parent::doGet($params, 'Ads', AdGetItem::class);
+        return parent::doGet($params, 'Ads', false);
     }
 
     /**
