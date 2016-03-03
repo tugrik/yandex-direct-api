@@ -176,8 +176,8 @@ abstract class BaseService
     protected function doAdd($params)
     {
         $response = $this->call('add', $params);
-        $result = $this->mapArray($response->AddResults, ActionResult::class);
-        return $result;
+        //$result = $this->mapArray($response->AddResults, ActionResult::g);
+        return $response->AddResults;
     }
 
     /**
@@ -222,8 +222,8 @@ abstract class BaseService
             'SelectionCriteria' => $SelectionCriteria
         ];
         $response = $this->call('delete', $params);
-        $result = $this->mapArray($response->DeleteResults, ActionResult::class);
-        return $result;
+        //$result = $this->mapArray($response->DeleteResults, ActionResult::class);
+        return $response->DeleteResults;
     }
 
     /**
@@ -237,8 +237,8 @@ abstract class BaseService
             'SelectionCriteria' => $SelectionCriteria
         ];
         $response = $this->call('suspend', $params);
-        $result = $this->mapArray($response->SuspendResults, ActionResult::class);
-        return $result;
+        //$result = $this->mapArray($response->SuspendResults, ActionResult::class);
+        return $response->SuspendResults;
     }
 
     /**
@@ -252,8 +252,8 @@ abstract class BaseService
             'SelectionCriteria' => $SelectionCriteria
         ];
         $response = $this->call('resume', $params);
-        $result = $this->mapArray($response->ResumeResults, ActionResult::class);
-        return $result;
+        //$result = $this->mapArray($response->ResumeResults, ActionResult::class);
+        return $response->ResumeResults;
     }
 
     /**
@@ -267,8 +267,8 @@ abstract class BaseService
             'SelectionCriteria' => $SelectionCriteria
         ];
         $response = $this->call('archive', $params);
-        $result = $this->mapArray($response->ArchiveResults, ActionResult::class);
-        return $result;
+        //$result = $this->mapArray($response->ArchiveResults, ActionResult::class);
+        return $response->ArchiveResults;
     }
 
     /**
@@ -282,8 +282,8 @@ abstract class BaseService
             'SelectionCriteria' => $SelectionCriteria
         ];
         $response = $this->call('unarchive', $params);
-        $result = $this->mapArray($response->UnarchiveResults, ActionResult::class);
-        return $result;
+        //$result = $this->mapArray($response->UnarchiveResults, ActionResult::class);
+        return $response->UnarchiveResults;
     }
 
     /**

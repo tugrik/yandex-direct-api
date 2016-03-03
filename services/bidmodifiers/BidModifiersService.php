@@ -76,7 +76,7 @@ class BidModifiersService extends BaseService
         if ($Page) {
             $params['Page'] = $Page;
         }
-        return parent::doGet($params, 'BidModifiers', BidModifierGetItem::class);
+        return parent::doGet($params, 'BidModifiers', flase);
     }
 
     /**
@@ -90,7 +90,8 @@ class BidModifiersService extends BaseService
             'BidModifiers' => $BidModifiers
         ];
         $result = $this->call('set', $params);
-        return $this->mapArray($result->SetResults, ActionResult::class);
+        return $result->SetResults;
+        //return $this->mapArray($result->SetResults, ActionResult::class);
     }
 
     /**
@@ -104,7 +105,8 @@ class BidModifiersService extends BaseService
             'BidModifierToggleItems' => $BidModifierToggleItems
         ];
         $result = $this->call('toggle', $params);
-        return $this->mapArray($result->SetResults, ToggleResult::class);
+        return $result->SetResults;
+        //return $this->mapArray($result->SetResults, ToggleResult::class);
     }
 
     protected function getName()

@@ -40,7 +40,8 @@ class BidsService extends BaseService
             'Bids' => $Bids
         ];
         $result = $this->call('set', $params);
-        return $this->mapArray($result->SetResults, ActionResult::class);
+        return $result->SetResults;
+        //return $this->mapArray($result->SetResults, ActionResult::class);
     }
 
     /**
@@ -54,7 +55,8 @@ class BidsService extends BaseService
             'Bids' => $Bids
         ];
         $result = $this->call('setAuto', $params);
-        return $this->mapArray($result->SetAutoResults, BidActionResult::class);
+        return $result->SetAutoResults;
+        //return $this->mapArray($result->SetAutoResults, BidActionResult::class);
     }
 
     protected function getName()

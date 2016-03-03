@@ -82,8 +82,8 @@ class AdsService extends BaseService
             'SelectionCriteria' => $SelectionCriteria
         ];
         $response = $this->call('moderate', $params);
-        $result = $this->mapArray($response->ModerateResults, ActionResult::class);
-        return $result;
+        //$result = $this->mapArray($response->ModerateResults, ActionResult::class);
+        return $response->ModerateResults;
 
     }
 
