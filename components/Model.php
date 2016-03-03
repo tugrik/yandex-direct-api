@@ -13,7 +13,7 @@ class Model
                 if (property_exists($this, $name)) {
                     $this->$name = $value;
                 } else {
-                    throw new UnknownPropertyException('Свойство ' . $name . ' не существует в классе ' . static::class);
+                    throw new UnknownPropertyException('Свойство ' . $name . ' не существует в классе ');
                 }
             }
         }
