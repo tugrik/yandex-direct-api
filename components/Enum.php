@@ -36,7 +36,7 @@ abstract class Enum implements JsonSerializable
 
     final public static function getValues()
     {
-        $class = new ReflectionClass(static::class);
+        $class = new ReflectionClass(get_called_class());
         return array_values($class->getConstants());
     }
 
