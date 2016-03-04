@@ -37,7 +37,8 @@ class ChangesService extends BaseService
             'Timestamp' => $Timestamp
         ];
         $result = $this->call('checkCampaigns', $params);
-        return $this->map($result, CheckCampaignsResponse::class);
+        return $result;
+        //return $this->map($result, CheckCampaignsResponse::class);
     }
 
     /**
