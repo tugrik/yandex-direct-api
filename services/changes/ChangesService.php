@@ -22,7 +22,8 @@ class ChangesService extends BaseService
             'Timestamp' => $Timestamp
         ];
         $result = $this->call('checkDictionaries', $params);
-        return $this->map($result, CheckDictionariesResponse::class);
+        return $result;
+        //return $this->map($result, CheckDictionariesResponse::class);
     }
 
     /**
@@ -69,7 +70,8 @@ class ChangesService extends BaseService
         $params['FieldNames'] = $FieldNames;
         $params['Timestamp'] = $Timestamp;
         $result = $this->call('check', $params);
-        return $this->map($result, CheckResponse::class);
+        return $result;
+        //return $this->map($result, CheckResponse::class);
     }
 
     protected function getName()
