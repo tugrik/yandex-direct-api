@@ -51,7 +51,7 @@ class SitelinksService extends BaseService
             $params['Page'] = $Page;
         }
 
-        return parent::doGet($params, 'SitelinksSets', SitelinksSetGetItem::class);
+        return parent::doGet($params, 'SitelinksSets', false);
     }
 
     protected function getName()
