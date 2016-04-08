@@ -9,7 +9,6 @@ class IdsCriteria extends Model
 {
     /**
      * @var int[]
-     * @Assert\NotBlank()
      */
     public $Ids;
 }
