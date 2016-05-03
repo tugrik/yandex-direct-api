@@ -47,20 +47,12 @@ class CampaignsService extends BaseService
         return parent::archive($SelectionCriteria);
     }
 
-    /**
-     * @param CampaignsSelectionCriteria   $SelectionCriteria
-     * @param CampaignFieldEnum[]          $FieldNames
-     * @param TextCampaignFieldEnum[]      $TextCampaignFieldNames
-     * @param MobileAppCampaignFieldEnum[] $MobileAppCampaignFieldNames
-     * @param LimitOffset|null             $Page
-     *
-     * @return CampaignGetItem[]
-     */
     public function get(
         CampaignsSelectionCriteria $SelectionCriteria,
         array $FieldNames,
         array $TextCampaignFieldNames = [],
         array $MobileAppCampaignFieldNames = [],
+        array $DynamicTextCampaignFieldNames = [],
         LimitOffset $Page = null
     ) {
         $params = [
@@ -73,10 +65,13 @@ class CampaignsService extends BaseService
         if ($MobileAppCampaignFieldNames) {
             $params['MobileAppCampaignFieldNames'] = $MobileAppCampaignFieldNames;
         }
+        if ($DynamicTextCampaignFieldNames) {
+            $params['DynamicTextCampaignFieldNames'] = $DynamicTextCampaignFieldNames;
+        }
         if ($Page) {
             $params['Page'] = $Page;
         }
-        return parent::doGet($params, 'Campaigns', false);
+        return parent::doGet($params, 'Campaigns', CampaignGetItem::class);
     }
 
     /**
