@@ -71,7 +71,7 @@ class CampaignsService extends BaseService
         if ($Page) {
             $params['Page'] = $Page;
         }
-        return parent::doGet($params, 'Campaigns', CampaignGetItem::class);
+        return parent::doGet($params, 'Campaigns', null);
     }
 
     /**
