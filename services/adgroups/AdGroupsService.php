@@ -50,6 +50,7 @@ class AdGroupsService extends BaseService
         AdGroupsSelectionCriteria $SelectionCriteria,
         array $FieldNames,
         array $MobileAppAdGroupFieldNames = [],
+        array $DynamicTextAdGroupFieldNames = [],
         LimitOffset $Page = null
     ) {
         $params = [
@@ -59,11 +60,13 @@ class AdGroupsService extends BaseService
         if ($MobileAppAdGroupFieldNames) {
             $params['MobileAppAdGroupFieldNames'] = $MobileAppAdGroupFieldNames;
         }
+        if ($DynamicTextAdGroupFieldNames) {
+            $params['DynamicTextAdGroupFieldNames'] = $DynamicTextAdGroupFieldNames;
+        }
 
         if ($Page) {
             $params['Page'] = $Page;
         }
-
         return parent::doGet($params, 'AdGroups', null);
     }
 

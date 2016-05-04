@@ -41,18 +41,11 @@ class AdsService extends BaseService
         return parent::delete($SelectionCriteria);
     }
 
-    /**
-     * @param AdsSelectionCriteria $SelectionCriteria
-     *
-     * @param $fieldNames
-     * @param bool $textAdFieldNames
-     * @param int $limit
-     * @param int $offset
-     * @return \directapi\services\ads\models\AdGetItem[]
-     */
     public function get(AdsSelectionCriteria $SelectionCriteria,
                         $fieldNames,
                         $textAdFieldNames = false,
+                        $MobileAppAdFieldNames = false,
+                        $DynamicTextAdFieldNames = false,
                         $limit = 10000,
                         $offset = 0
     ) {
@@ -68,7 +61,13 @@ class AdsService extends BaseService
         if($textAdFieldNames && is_array($textAdFieldNames)){
             $params['TextAdFieldNames'] = $textAdFieldNames;
         }
-        return parent::doGet($params, 'Ads', false);
+        if($MobileAppAdFieldNames && is_array($MobileAppAdFieldNames)){
+            $params['MobileAppAdFieldNames'] = $MobileAppAdFieldNames;
+        }
+        if($DynamicTextAdFieldNames && is_array($DynamicTextAdFieldNames)){
+            $params['DynamicTextAdFieldNames'] = $DynamicTextAdFieldNames;
+        }
+        return parent::doGet($params, 'Ads', null);
     }
 
     /**
