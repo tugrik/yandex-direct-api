@@ -51,7 +51,7 @@ class VCardsService extends BaseService
             $params['Page'] = $Page;
         }
 
-        return parent::doGet($params, 'VCards', VCardGetItem::class);
+        return parent::doGet($params, 'VCards', null);
     }
 
     protected function getName()
