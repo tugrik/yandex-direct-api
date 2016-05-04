@@ -76,7 +76,7 @@ class BidModifiersService extends BaseService
         if ($Page) {
             $params['Page'] = $Page;
         }
-        return parent::doGet($params, 'BidModifiers', flase);
+        return parent::doGet($params, 'BidModifiers', false);
     }
 
     /**
