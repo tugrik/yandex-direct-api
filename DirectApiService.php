@@ -4,6 +4,7 @@ namespace directapi;
 
 use directapi\exceptions\DirectApiException;
 use directapi\exceptions\RequestValidationException;
+use directapi\services\adextensions\AdExtensionsService;
 use directapi\services\adgroups\AdGroupsService;
 use directapi\services\ads\AdsService;
 use directapi\services\bidmodifiers\BidModifiersService;
@@ -165,6 +166,19 @@ class DirectApiService
             $this->sitelinksService = new SitelinksService($this);
         }
         return $this->sitelinksService;
+
+    }
+
+    private $adExtensionsService;
+    /**
+     * @return AdExtensionsService
+     */
+    public function getAdExtensionsService()
+    {
+        if (!$this->adExtensionsService) {
+            $this->adExtensionsService = new AdExtensionsService($this);
+        }
+        return $this->adExtensionsService;
 
     }
 
