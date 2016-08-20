@@ -18,18 +18,30 @@ class AdExtensionsService extends BaseService
     {
         $params = [
             'SelectionCriteria' => $SelectionCriteria,
-            'FieldNames'        => $FieldNames,
+            'FieldNames' => $FieldNames,
             'CalloutFieldNames' => ['CalloutText']
         ];
         if ($Page) {
             $params['Page'] = $Page;
         }
 
-        return parent::doGet($params, 'SitelinksSets', false);
+        return $this->doGet($params, 'AdExtensions', false);
     }
 
     protected function getName()
     {
-        return 'AdExtensions';
+        return 'adextensions';
     }
+
+    public function add(array $SitelinksSets)
+    {
+        return false;
+//        return parent::doAdd($params);
+    }
+
+    public function delete(IdsCriteria $SelectionCriteria)
+    {
+        return parent::delete($SelectionCriteria);
+    }
+
 }
