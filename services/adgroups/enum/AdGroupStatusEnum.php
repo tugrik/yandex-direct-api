@@ -15,4 +15,5 @@ class AdGroupStatusEnum extends Enum
     const ARCHIVED = 'ARCHIVED';
     const SUSPENDED = 'SUSPENDED';
     const ALL = 'all';
+    const SEARCH = 'search';
 }
