@@ -12,8 +12,7 @@ class AdImagesService extends BaseService
     {
         $params = [
             'SelectionCriteria' => $SelectionCriteria,
-            'FieldNames' => $FieldNames,
-            'CalloutFieldNames' => ['CalloutText']
+            'FieldNames' => $FieldNames
         ];
         if ($Page) {
             $params['Page'] = $Page;

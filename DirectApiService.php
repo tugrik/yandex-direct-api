@@ -6,6 +6,7 @@ use directapi\exceptions\DirectApiException;
 use directapi\exceptions\RequestValidationException;
 use directapi\services\adextensions\AdExtensionsService;
 use directapi\services\adgroups\AdGroupsService;
+use directapi\services\adimages\AdImagesService;
 use directapi\services\ads\AdsService;
 use directapi\services\bidmodifiers\BidModifiersService;
 use directapi\services\bids\BidsService;
@@ -73,6 +74,11 @@ class DirectApiService
      */
     private $vcardsService;
 
+    /**
+     * @var AdImagesService
+     */
+    private $adImagesService;
+
     public function __construct($login, $token, $clientLogin)
     {
         $this->token = $token;
@@ -100,6 +106,17 @@ class DirectApiService
             $this->adsService = new AdsService($this);
         }
         return $this->adsService;
+    }
+
+    /**
+     * @return AdImagesService
+     */
+    public function getAdImagesService()
+    {
+        if (!$this->adImagesService) {
+            $this->adImagesService = new AdImagesService($this);
+        }
+        return $this->adImagesService;
     }
 
     /**
