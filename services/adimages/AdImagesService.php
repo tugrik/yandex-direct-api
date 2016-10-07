@@ -18,7 +18,7 @@ class AdImagesService extends BaseService
             $params['Page'] = $Page;
         }
 
-        return $this->doGet($params, 'AdExtensions', false);
+        return $this->doGet($params, 'AdImages', false);
     }
 
     protected function getName()
