@@ -46,7 +46,6 @@ class AdsService extends BaseService
                         $textAdFieldNames = false,
                         $MobileAppAdFieldNames = false,
                         $DynamicTextAdFieldNames = false,
-                        $DynamicTextAdFieldNames = false,
                         $TextImageAdFieldNames = false,
                         $MobileAppImageAdFieldNames = false,
                         $limit = 10000,
