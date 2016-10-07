@@ -46,6 +46,9 @@ class AdsService extends BaseService
                         $textAdFieldNames = false,
                         $MobileAppAdFieldNames = false,
                         $DynamicTextAdFieldNames = false,
+                        $DynamicTextAdFieldNames = false,
+                        $TextImageAdFieldNames = false,
+                        $MobileAppImageAdFieldNames = false,
                         $limit = 10000,
                         $offset = 0
     ) {
@@ -66,6 +69,12 @@ class AdsService extends BaseService
         }
         if($DynamicTextAdFieldNames && is_array($DynamicTextAdFieldNames)){
             $params['DynamicTextAdFieldNames'] = $DynamicTextAdFieldNames;
+        }
+        if($TextImageAdFieldNames && is_array($TextImageAdFieldNames)){
+            $params['TextImageAdFieldNames'] = $TextImageAdFieldNames;
+        }
+        if($MobileAppImageAdFieldNames && is_array($MobileAppImageAdFieldNames)){
+            $params['MobileAppImageAdFieldNames'] = $MobileAppImageAdFieldNames;
         }
         return parent::doGet($params, 'Ads', null);
     }
