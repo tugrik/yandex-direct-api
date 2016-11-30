@@ -335,8 +335,8 @@ class DirectApiService
     {
         $curl = $this->getCurl();
         curl_setopt($curl, CURLOPT_URL, $this->apiUrl . $serviceName);
-        curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 180);
-        curl_setopt($curl, CURLOPT_TIMEOUT, 180); //timeout in seconds
+        curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 60);
+        curl_setopt($curl, CURLOPT_TIMEOUT, 60); //timeout in seconds
 
         $request = json_encode($request, JSON_UNESCAPED_UNICODE);
         $request = preg_replace('/,\s*"[^"]+":null|"[^"]+":null,?/', '', $request);
