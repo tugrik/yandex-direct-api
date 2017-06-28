@@ -79,11 +79,14 @@ class DirectApiService
      */
     private $adImagesService;
 
-    public function __construct($login, $token, $clientLogin)
+    private $dumpFunc;
+
+    public function __construct($login, $token, $clientLogin, $dumpFunc = null)
     {
         $this->token = $token;
         $this->login = $login;
         $this->clientLogin = $clientLogin;
+        $this->dumpFunc = $dumpFunc;
     }
 
     /**
@@ -357,6 +360,23 @@ class DirectApiService
             $this->lastCallCost = $cost;
             $this->unitsLimit = $limit;
         }
+        try {
+            if(is_callable($this->dumpFunc)) {
+                $this->dumpFunc->__invoke([
+                    'serviceName' => $serviceName,
+                    'method' => $method,
+                    'units' => $this->units,
+                    'lastCallCost' => $this->lastCallCost,
+                    'unitsLimit' => $this->unitsLimit,
+                    'clientLogin' => $this->clientLogin,
+                    'agencyLogin' => $this->login,
+                    'request' => $request,
+                    'response' => $response,
+                    'httpCode' => curl_getinfo($curl, CURLINFO_HTTP_CODE)
+                ]);
+            }
+        }
+        catch (\Exception $e){}
 
         if (isset($data->error)) {
             if ($data->error->error_code == 506) //concurrent limit
